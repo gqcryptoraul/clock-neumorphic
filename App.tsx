@@ -1,20 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView} from "react-native";
+import AlarmContainer from "./src/components/Alarm/AlarmContainer";
+import Clock from "./src/components/Clock/Clock";
+ 
+export default function Reloj() {
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    
+return (
+  <>
+ 
+    <Clock />
+     <ScrollView nestedScrollEnabled={true} contentContainerStyle={{flex: 1, justifyContent: 'flex-end', marginBottom: 50}}>
+        <AlarmContainer alarm={"07: 30"}/>   
+        <AlarmContainer alarm={"09: 40"}/>   
+        <AlarmContainer alarm={"22: 00"}/>  
+    </ScrollView>
+ 
+</>
+);
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
